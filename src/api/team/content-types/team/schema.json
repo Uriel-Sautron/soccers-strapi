@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "OtherTeam",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "season": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::season-calendar.season-calendar"
+    },
+    "secondMatch": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match"
+    },
+    "firstMatch": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match"
+    }
+  }
+}

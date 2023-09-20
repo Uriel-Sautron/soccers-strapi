@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_teams",
+  "info": {
+    "singularName": "my-team",
+    "pluralName": "my-teams",
+    "displayName": "myTeam",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "president": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::player.player"
+    },
+    "treasurer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::player.player"
+    },
+    "secretary": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::player.player"
+    }
+  }
+}

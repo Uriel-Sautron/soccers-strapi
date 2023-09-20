@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scorers",
+  "info": {
+    "singularName": "scorer",
+    "pluralName": "scorers",
+    "displayName": "Scorer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "goalScorer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::player.player"
+    },
+    "scorerMatch": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match"
+    },
+    "goalNumber": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "players",
+  "info": {
+    "singularName": "player",
+    "pluralName": "players",
+    "displayName": "Player"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "adress": {
+      "type": "string"
+    },
+    "zipCode": {
+      "type": "string"
+    },
+    "village": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "unique": true
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": false
+    },
+    "seasonCalendars": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::season-calendar.season-calendar",
+      "inversedBy": "players"
+    },
+    "matches": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::match.match",
+      "mappedBy": "players"
+    }
+  }
+}

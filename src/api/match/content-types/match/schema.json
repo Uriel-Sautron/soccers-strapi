@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matches",
+  "info": {
+    "singularName": "match",
+    "pluralName": "matches",
+    "displayName": "Match",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "matchDay": {
+      "type": "date",
+      "required": true,
+      "unique": true
+    },
+    "matchTime": {
+      "type": "string",
+      "default": "21H"
+    },
+    "observation": {
+      "type": "richtext"
+    },
+    "season": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::season-calendar.season-calendar",
+      "inversedBy": "matches"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::player.player",
+      "inversedBy": "matches"
+    },
+    "myTeamScore": {
+      "type": "integer"
+    },
+    "otherTeamScore": {
+      "type": "integer"
+    },
+    "otherTeam": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team"
+    },
+    "isPlayed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "isHome": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

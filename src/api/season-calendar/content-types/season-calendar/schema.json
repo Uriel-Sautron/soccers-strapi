@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "season_calendars",
+  "info": {
+    "singularName": "season-calendar",
+    "pluralName": "season-calendars",
+    "displayName": "Season Calendar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "season": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "players": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::player.player",
+      "mappedBy": "seasonCalendars"
+    },
+    "matches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::match.match",
+      "mappedBy": "season"
+    }
+  }
+}
